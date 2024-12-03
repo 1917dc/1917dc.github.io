@@ -1,8 +1,8 @@
 +++
 title = "About"
 description = ""
-date = "2024-12-2"
-aliases = ["about-us"]
+date = "2024-12-02"
+aliases = ["about"]
 author = "Luiz G."
 +++
 
