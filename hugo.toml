@@ -45,7 +45,11 @@ title = "Email"
 url = "mailto:luizgust.x@gmail.com"
 
 [menu]
-
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
 [taxonomies]
 category = "categories"
 tag = "tags"
