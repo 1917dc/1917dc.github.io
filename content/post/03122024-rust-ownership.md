@@ -8,23 +8,31 @@ tags = ['rust', 'stack', 'heap']
 categories = ['programming']
 +++
 
-# Rust ownership:
 - Ao invés de depender de garbage collection, que existem em linguagem de alto nível como Java e Python, ou de depender de alocação de memória explícita como C; o Rust executa isso de uma forma diferente: usando "ownership" que são checadas em tempo de compilação, caso alguma regra seja quebrada nesse sentido o programa não vai compilar.
 
 ** revisar ponteiros**
->  [!NOTE] Heap & Stack
->  The heap is less organized: when you put data on the heap, you request a certain amount of space. The memory allocator finds an empty spot in the heap that is big enough, marks it as being in use, and returns a _pointer_, which is the address of that location. This process is called _allocating on the heap_ and is sometimes abbreviated as just _allocating_ (pushing values onto the stack is not considered allocating). Because the pointer to the heap is a known, fixed size, you can store the pointer on the stack, but when you want the actual data, you must follow the pointer. Think of being seated at a restaurant. When you enter, you state the number of people in your group, and the host finds an empty table that fits everyone and leads you there. If someone in your group comes late, they can ask where you’ve been seated to find you.
->  
->  Pushing to the stack is faster than allocating on the heap because the allocator never has to search for a place to store new data; that location is always at the top of the stack. Comparatively, allocating space on the heap requires more work because the allocator must first find a big enough space to hold the data and then perform bookkeeping to prepare for the next allocation.
-> Accessing data in the heap is slower than accessing data on the stack because you have to follow a pointer to get there. Contemporary processors are faster if they jump around less in memory. Continuing the analogy, consider a server at a restaurant taking orders from many tables. It’s most efficient to get all the orders at one table before moving on to the next table. Taking an order from table A, then an order from table B, then one from A again, and then one from B again would be a much slower process. By the same token, a processor can do its job better if it works on data that’s close to other data (as it is on the stack) rather than farther away (as it can be on the heap).
-> When your code calls a function, the values passed into the function (including, potentially, pointers to data on the heap) and the function’s local variables get pushed onto the stack. When the function is over, those values get popped off the stack.
+
+---
+
+## Heap & Stack
+The heap is less organized: when you put data on the heap, you request a certain amount of space. The memory allocator finds an empty spot in the heap that is big enough, marks it as being in use, and returns a _pointer_, which is the address of that location. This process is called _allocating on the heap_ and is sometimes abbreviated as just _allocating_ (pushing values onto the stack is not considered allocating). Because the pointer to the heap is a known, fixed size, you can store the pointer on the stack, but when you want the actual data, you must follow the pointer. Think of being seated at a restaurant. When you enter, you state the number of people in your group, and the host finds an empty table that fits everyone and leads you there. If someone in your group comes late, they can ask where you’ve been seated to find you.
+  
+Pushing to the stack is faster than allocating on the heap because the allocator never has to search for a place to store new data; that location is always at the top of the stack. Comparatively, allocating space on the heap requires more work because the allocator must first find a big enough space to hold the data and then perform bookkeeping to prepare for the next allocation.
+Accessing data in the heap is slower than accessing data on the stack because you have to follow a pointer to get there. Contemporary processors are faster if they jump around less in memory. Continuing the analogy, consider a server at a restaurant taking orders from many tables. It’s most efficient to get all the orders at one table before moving on to the next table. Taking an order from table A, then an order from table B, then one from A again, and then one from B again would be a much slower process. By the same token, a processor can do its job better if it works on data that’s close to other data (as it is on the stack) rather than farther away (as it can be on the heap).
+When your code calls a function, the values passed into the function (including, potentially, pointers to data on the heap) and the function’s local variables get pushed onto the stack. When the function is over, those values get popped off the stack.
+
+---
 
 - **Stack**: A stack precisa de valores de tamanho fixo, que são declarados na instanciação do dado, por exemplo um array, que necessariamente precisa ter um tamanho fixo para ser declarado, usa o método LIFO(Last In First Out), assim como na estrutura de pilha.
+
 - **Heap**: A heap por outro lado tende a ser mais desorganizada, não necessariamente precisa de um tamanho fixo, aloca de forma avulsa onde a memória está livre, ou seja, usar a stack é mais rápida pelo simples fato dela não ter de verificar onde está ou não livre para alocações, ela só empurra o elemento para o topo da pilha ou remove. 
+
 ## Ownership rules:
+
 - Cada variável tem um dono.
 - Só pode ter um dono por vez.
 - A variável é imediatamente descartada assim que o dono não existir mais.
+
 ```rust
 fn main(){
 	// test não é válido ainda
@@ -40,7 +48,8 @@ fn main(){
 }
 ```
 
-- **Strings** (para entender melhor como funcionam a heap e a stack): Existe uma diferença entre `string literals` e `strings` propriamente ditas. Essa diferença pode não aparentar ser explícita, mas ela existe; quando declaramos um string literal estamos jogando o valor diretamente na  stack, pois a quantidade de memória a ser consumida já é de conhecimento do compilador e operações em tempo de runtime não vão precisar acontecer para cuidar desse valor em específico por ele ser imutável. Já com strings a coisa é totalmente diferente, já que não necessariamente sabemos a quantidade de memória que essa variável vai ocupar, temos que alocar ele na heap, ou seja, operações vão acontecer em tempo de runtime para que o valor da string possa ser mutável, por exemplo: ```
+- **Strings** (para entender melhor como funcionam a heap e a stack): Existe uma diferença entre `string literals` e `strings` propriamente ditas. Essa diferença pode não aparentar ser explícita, mas ela existe; quando declaramos um string literal estamos jogando o valor diretamente na  stack, pois a quantidade de memória a ser consumida já é de conhecimento do compilador e operações em tempo de runtime não vão precisar acontecer para cuidar desse valor em específico por ele ser imutável. Já com strings a coisa é totalmente diferente, já que não necessariamente sabemos a quantidade de memória que essa variável vai ocupar, temos que alocar ele na heap, ou seja, operações vão acontecer em tempo de runtime para que o valor da string possa ser mutável, por exemplo:
+
 ```rust
 fn main(){
 
