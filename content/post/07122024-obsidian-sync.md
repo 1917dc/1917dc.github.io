@@ -1,6 +1,6 @@
 +++
 author = 'Luiz'
-title = '07122024 Obsidian Sync'
+title = 'Obsidian Sync'
 date = 2024-12-07T12:03:30-03:00
 description = "Como estou usando o Obsidian para sincronizar todas as minhas anotações"
 tags = ['obsidian']
