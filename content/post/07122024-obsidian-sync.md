@@ -26,7 +26,7 @@ draft = false
 
 ## A dificuldade enfrentada para sincronizar no meu celular
 
-- Até pouco tempo atrás estava procurando uma alternativa viável para sincronizar esse repositório no meu celular sem precisar usar de aplicativos como [Terrmux](https://termux.dev/en/), que não impõem uma dificuldade enorme, porém não são extremamente práticos para o dia-a-dia. Portanto na busca de alternativas me deparei com uma aplicaçao na própria PlayStore chamada de [Git Sync](https://play.google.com/store/apps/details?id=com.viscouspot.gitsync&hl=en&pli=1), e ela faz exatamente o que eu precisava, que era baixar esse repositório dentro das pastas emuladas pelo sistema operacional do meu android(Samsung), e sempre que alguma alteração fosse feita, o repositório ter seus arquivos sincronizados e atualizados na pasta.
+- Até pouco tempo atrás estava procurando uma alternativa viável para sincronizar esse repositório no meu celular sem precisar usar de aplicativos como [Termux](https://termux.dev/en/), que não impõem uma dificuldade enorme, porém não são extremamente práticos para o dia-a-dia. Portanto na busca de alternativas me deparei com uma aplicaçao na própria PlayStore chamada de [Git Sync](https://play.google.com/store/apps/details?id=com.viscouspot.gitsync&hl=en&pli=1), e ela faz exatamente o que eu precisava, que era baixar esse repositório dentro das pastas emuladas pelo sistema operacional do meu android(Samsung), e sempre que alguma alteração fosse feita, o repositório ter seus arquivos sincronizados e atualizados na pasta.
 
 # Como isso me ajuda?
 
