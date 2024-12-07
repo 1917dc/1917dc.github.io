@@ -2,7 +2,7 @@
 author = 'Luiz'
 title = 'Obsidian Sync'
 date = 2024-12-07T12:03:30-03:00
-description = "Como estou usando o Obsidian para sincronizar todas as minhas anotações"
+description = "Como estou usando o Git para sincronizar todas as minhas anotações"
 tags = ['obsidian']
 categories = ['organization']
 draft = false 
