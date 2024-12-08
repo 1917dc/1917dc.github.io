@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© [Luiz G.](https://github.com/1917dc)</copyright>
-    <lastBuildDate>Tue, 03 Dec 2024 21:15:16 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2024 17:19:54 -0300</lastBuildDate>
     <atom:link href="https://1917dc.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent of Code 2024 (dia 1)</title>
+      <link>https://1917dc.github.io/post/08122024-adventofcode-2024/</link>
+      <pubDate>Sun, 08 Dec 2024 17:19:54 -0300</pubDate>
+      <guid>https://1917dc.github.io/post/08122024-adventofcode-2024/</guid>
+      <description>Prólogo: Há alguns dias venho olhando o novo &amp;ldquo;Advent of Code&amp;rdquo; deste ano. O &amp;ldquo;Advent of Code&amp;rdquo; basicamente consiste em uma série de desafios com temática de natal e uma história por trás, desafios esses que consistem em problemas de lógica usando inputs e outputs; eu decidi aproveitar a minha vontade de aprender Rust para experimentar a minha capacidade de resolver problemas em uma linguagem nova para mim, e experimentar junto disso esse evento, que já ocorre fazem 9 anos(2015).</description>
+    </item>
     <item>
       <title>Rust Ownership</title>
       <link>https://1917dc.github.io/post/03122024-rust-ownership/</link>

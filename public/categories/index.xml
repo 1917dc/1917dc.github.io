@@ -7,8 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© [Luiz G.](https://github.com/1917dc)</copyright>
-    <lastBuildDate>Sat, 07 Dec 2024 12:03:30 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2024 17:19:54 -0300</lastBuildDate>
     <atom:link href="https://1917dc.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adventofcode</title>
+      <link>https://1917dc.github.io/categories/adventofcode/</link>
+      <pubDate>Sun, 08 Dec 2024 17:19:54 -0300</pubDate>
+      <guid>https://1917dc.github.io/categories/adventofcode/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rust</title>
+      <link>https://1917dc.github.io/categories/rust/</link>
+      <pubDate>Sun, 08 Dec 2024 17:19:54 -0300</pubDate>
+      <guid>https://1917dc.github.io/categories/rust/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Organization</title>
       <link>https://1917dc.github.io/categories/organization/</link>
