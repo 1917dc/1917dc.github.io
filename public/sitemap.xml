@@ -20,9 +20,6 @@
     <loc>https://1917dc.github.io/categories/</loc>
     <lastmod>2024-12-08T17:19:54-03:00</lastmod>
   </url><url>
-    <loc>https://1917dc.github.io/tags/index/</loc>
-    <lastmod>2024-12-08T17:19:54-03:00</lastmod>
-  </url><url>
     <loc>https://1917dc.github.io/post/</loc>
     <lastmod>2024-12-08T17:19:54-03:00</lastmod>
   </url><url>
@@ -61,6 +58,8 @@
   </url><url>
     <loc>https://1917dc.github.io/about/</loc>
     <lastmod>2024-12-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://1917dc.github.io/tags/index/</loc>
   </url><url>
     <loc>https://1917dc.github.io/series/</loc>
   </url>

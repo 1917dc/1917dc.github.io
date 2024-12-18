@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rust on 1917dc</title>
+    <title>rust on 1917dc</title>
     <link>https://1917dc.github.io/tags/rust/</link>
-    <description>Recent content in Rust on 1917dc</description>
+    <description>Recent content in rust on 1917dc</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© [Luiz G.](https://github.com/1917dc)</copyright>
-    <lastBuildDate>Sun, 08 Dec 2024 17:19:54 -0300</lastBuildDate>
-    <atom:link href="https://1917dc.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Dec 2024 17:19:54 -0300</lastBuildDate><atom:link href="https://1917dc.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Advent of Code 2024 (dia 1)</title>
       <link>https://1917dc.github.io/post/08122024-adventofcode-2024/</link>
       <pubDate>Sun, 08 Dec 2024 17:19:54 -0300</pubDate>
+      
       <guid>https://1917dc.github.io/post/08122024-adventofcode-2024/</guid>
-      <description>Prólogo: Há alguns dias venho olhando o novo &amp;ldquo;Advent of Code&amp;rdquo; deste ano. O &amp;ldquo;Advent of Code&amp;rdquo; basicamente consiste em uma série de desafios com temática de natal e uma história por trás, desafios esses que consistem em problemas de lógica usando inputs e outputs; eu decidi aproveitar a minha vontade de aprender Rust para experimentar a minha capacidade de resolver problemas em uma linguagem nova para mim, e experimentar junto disso esse evento, que já ocorre fazem 9 anos(2015).</description>
+      <description>Prólogo:  Há alguns dias venho olhando o novo &amp;ldquo;Advent of Code&amp;rdquo; deste ano. O &amp;ldquo;Advent of Code&amp;rdquo; basicamente consiste em uma série de desafios com temática de natal e uma história por trás, desafios esses que consistem em problemas de lógica usando inputs e outputs; eu decidi aproveitar a minha vontade de aprender Rust para experimentar a minha capacidade de resolver problemas em uma linguagem nova para mim, e experimentar junto disso esse evento, que já ocorre fazem 9 anos(2015).</description>
     </item>
+    
     <item>
       <title>Rust Ownership</title>
       <link>https://1917dc.github.io/post/03122024-rust-ownership/</link>
       <pubDate>Tue, 03 Dec 2024 21:15:16 -0300</pubDate>
+      
       <guid>https://1917dc.github.io/post/03122024-rust-ownership/</guid>
-      <description>Ao invés de depender de garbage collection, que existem em linguagem de alto nível como Java e Python, ou de depender de alocação de memória explícita como C; o Rust executa isso de uma forma diferente: usando &amp;ldquo;ownership&amp;rdquo; que são checadas em tempo de compilação, caso alguma regra seja quebrada nesse sentido o programa não vai compilar. ** revisar ponteiros**&#xA;Heap &amp;amp; Stack The heap is less organized: when you put data on the heap, you request a certain amount of space.</description>
+      <description>Ao invés de depender de garbage collection, que existem em linguagem de alto nível como Java e Python, ou de depender de alocação de memória explícita como C; o Rust executa isso de uma forma diferente: usando &amp;ldquo;ownership&amp;rdquo; que são checadas em tempo de compilação, caso alguma regra seja quebrada nesse sentido o programa não vai compilar.  ** revisar ponteiros**
+ Heap &amp;amp; Stack The heap is less organized: when you put data on the heap, you request a certain amount of space.</description>
     </item>
+    
     <item>
       <title>First steps into Rust</title>
       <link>https://1917dc.github.io/post/02122024-rust/</link>
       <pubDate>Mon, 02 Dec 2024 21:55:16 -0300</pubDate>
+      
       <guid>https://1917dc.github.io/post/02122024-rust/</guid>
-      <description>Why I&amp;rsquo;m learning Rust? Basically, I was planning on studying compilers, interpreters and how programming languages work on the low level part.&#xA;I tought that Rust was a good choice because it has large and active open source community, and it&amp;rsquo;s simpler than C and C++. I had sometime in last year learning C, was a pain in the ass, but I recognize the impact that it had in my understanding of how a computer memory works on the low level.</description>
+      <description>Why I&amp;rsquo;m learning Rust? Basically, I was planning on studying compilers, interpreters and how programming languages work on the low level part.
+I tought that Rust was a good choice because it has large and active open source community, and it&amp;rsquo;s simpler than C and C++. I had sometime in last year learning C, was a pain in the ass, but I recognize the impact that it had in my understanding of how a computer memory works on the low level.</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Stack on 1917dc</title>
+    <title>stack on 1917dc</title>
     <link>https://1917dc.github.io/tags/stack/</link>
-    <description>Recent content in Stack on 1917dc</description>
+    <description>Recent content in stack on 1917dc</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© [Luiz G.](https://github.com/1917dc)</copyright>
-    <lastBuildDate>Tue, 03 Dec 2024 21:15:16 -0300</lastBuildDate>
-    <atom:link href="https://1917dc.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Dec 2024 21:15:16 -0300</lastBuildDate><atom:link href="https://1917dc.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust Ownership</title>
       <link>https://1917dc.github.io/post/03122024-rust-ownership/</link>
       <pubDate>Tue, 03 Dec 2024 21:15:16 -0300</pubDate>
+      
       <guid>https://1917dc.github.io/post/03122024-rust-ownership/</guid>
-      <description>Ao invés de depender de garbage collection, que existem em linguagem de alto nível como Java e Python, ou de depender de alocação de memória explícita como C; o Rust executa isso de uma forma diferente: usando &amp;ldquo;ownership&amp;rdquo; que são checadas em tempo de compilação, caso alguma regra seja quebrada nesse sentido o programa não vai compilar. ** revisar ponteiros**&#xA;Heap &amp;amp; Stack The heap is less organized: when you put data on the heap, you request a certain amount of space.</description>
+      <description>Ao invés de depender de garbage collection, que existem em linguagem de alto nível como Java e Python, ou de depender de alocação de memória explícita como C; o Rust executa isso de uma forma diferente: usando &amp;ldquo;ownership&amp;rdquo; que são checadas em tempo de compilação, caso alguma regra seja quebrada nesse sentido o programa não vai compilar.  ** revisar ponteiros**
+ Heap &amp;amp; Stack The heap is less organized: when you put data on the heap, you request a certain amount of space.</description>
     </item>
+    
   </channel>
 </rss>

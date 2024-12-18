@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Adventofcode on 1917dc</title>
+    <title>adventofcode on 1917dc</title>
     <link>https://1917dc.github.io/tags/adventofcode/</link>
-    <description>Recent content in Adventofcode on 1917dc</description>
+    <description>Recent content in adventofcode on 1917dc</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© [Luiz G.](https://github.com/1917dc)</copyright>
-    <lastBuildDate>Sun, 08 Dec 2024 17:19:54 -0300</lastBuildDate>
-    <atom:link href="https://1917dc.github.io/tags/adventofcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Dec 2024 17:19:54 -0300</lastBuildDate><atom:link href="https://1917dc.github.io/tags/adventofcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Advent of Code 2024 (dia 1)</title>
       <link>https://1917dc.github.io/post/08122024-adventofcode-2024/</link>
       <pubDate>Sun, 08 Dec 2024 17:19:54 -0300</pubDate>
+      
       <guid>https://1917dc.github.io/post/08122024-adventofcode-2024/</guid>
-      <description>Prólogo: Há alguns dias venho olhando o novo &amp;ldquo;Advent of Code&amp;rdquo; deste ano. O &amp;ldquo;Advent of Code&amp;rdquo; basicamente consiste em uma série de desafios com temática de natal e uma história por trás, desafios esses que consistem em problemas de lógica usando inputs e outputs; eu decidi aproveitar a minha vontade de aprender Rust para experimentar a minha capacidade de resolver problemas em uma linguagem nova para mim, e experimentar junto disso esse evento, que já ocorre fazem 9 anos(2015).</description>
+      <description>Prólogo:  Há alguns dias venho olhando o novo &amp;ldquo;Advent of Code&amp;rdquo; deste ano. O &amp;ldquo;Advent of Code&amp;rdquo; basicamente consiste em uma série de desafios com temática de natal e uma história por trás, desafios esses que consistem em problemas de lógica usando inputs e outputs; eu decidi aproveitar a minha vontade de aprender Rust para experimentar a minha capacidade de resolver problemas em uma linguagem nova para mim, e experimentar junto disso esse evento, que já ocorre fazem 9 anos(2015).</description>
     </item>
+    
   </channel>
 </rss>

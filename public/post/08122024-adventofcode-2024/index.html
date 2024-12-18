@@ -40,8 +40,6 @@
     
     <li class="main-nav__item"><a class="nav-main-item" href="https://1917dc.github.io/about/" title="">About</a></li>
     
-    <li class="main-nav__item"><a class="nav-main-item" href="https://1917dc.github.io/about/" title="About">About</a></li>
-    
     <li class="main-nav__item"><a class="nav-main-item active" href="https://1917dc.github.io/post/" title="Posts">Posts</a></li>
     
     </ul>
@@ -167,69 +165,69 @@ So, for these example lists, the similarity score at the end of this process is 
 <ul>
 <li>Optei por programar esse problema em Rust por estar querendo me habituar e aprender a linguagem para futuros projetos em low-level nos quais tenho interesse.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::fs;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::io;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::env;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() -&gt; <span style="color:#a6e22e">std</span>::io::Result<span style="color:#f92672">&lt;</span>()<span style="color:#f92672">&gt;</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> _args: Vec<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> env::args().collect();
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> file_path <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>_args[<span style="color:#ae81ff">1</span>];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> result <span style="color:#f92672">=</span> read_file(<span style="color:#f92672">&amp;</span>file_path).unwrap();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> similarity <span style="color:#f92672">=</span> find_similarity(<span style="color:#f92672">&amp;</span>result).unwrap();
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> distance <span style="color:#f92672">=</span> find_distance(result).unwrap();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The similarity is: </span><span style="color:#e6db74">{similarity}</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The distance is: </span><span style="color:#e6db74">{distance}</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>    Ok(())
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">find_distance</span>(<span style="color:#66d9ef">mut</span> arr: [Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>; <span style="color:#ae81ff">2</span>]) -&gt; Result<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span>, io::Error<span style="color:#f92672">&gt;</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> distance: <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#f92672">!</span>arr[<span style="color:#ae81ff">1</span>].is_empty() {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> min_left: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> arr[<span style="color:#ae81ff">0</span>].iter().min().unwrap();
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> min_right: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> arr[<span style="color:#ae81ff">1</span>].iter().min().unwrap();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> diff: <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">match</span> min_left <span style="color:#f92672">&gt;</span> min_right {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">true</span> <span style="color:#f92672">=&gt;</span> min_left <span style="color:#f92672">-</span> min_right,
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">false</span> <span style="color:#f92672">=&gt;</span> min_right <span style="color:#f92672">-</span> min_left,
-</span></span><span style="display:flex;"><span>        };    
-</span></span><span style="display:flex;"><span>        distance <span style="color:#f92672">+=</span> diff;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> index_left: <span style="color:#66d9ef">usize</span> <span style="color:#f92672">=</span> arr[<span style="color:#ae81ff">0</span>].iter().position(<span style="color:#f92672">|</span>num<span style="color:#f92672">|</span> num <span style="color:#f92672">==</span> min_left).unwrap();
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> index_right: <span style="color:#66d9ef">usize</span> <span style="color:#f92672">=</span> arr[<span style="color:#ae81ff">1</span>].iter().position(<span style="color:#f92672">|</span>num<span style="color:#f92672">|</span> num <span style="color:#f92672">==</span> min_right).unwrap();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        arr[<span style="color:#ae81ff">0</span>].remove(index_left);
-</span></span><span style="display:flex;"><span>        arr[<span style="color:#ae81ff">1</span>].remove(index_right);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Ok(distance)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">read_file</span>(filename: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">str</span>) -&gt; Result<span style="color:#f92672">&lt;</span>[Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>; <span style="color:#ae81ff">2</span>], io::Error<span style="color:#f92672">&gt;</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> result: [Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>; <span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> [Vec::new(), Vec::new()];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> line <span style="color:#66d9ef">in</span> fs::read_to_string(filename).unwrap().lines() {
-</span></span><span style="display:flex;"><span>        result[<span style="color:#ae81ff">0</span>].push(line[<span style="color:#f92672">..</span><span style="color:#ae81ff">5</span>].parse::<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>().unwrap());
-</span></span><span style="display:flex;"><span>        result[<span style="color:#ae81ff">1</span>].push(line[<span style="color:#ae81ff">8</span><span style="color:#f92672">..</span>].parse::<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>().unwrap());
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    Ok(result)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">find_similarity</span>(arr: <span style="color:#66d9ef">&amp;</span>[Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>; <span style="color:#ae81ff">2</span>]) -&gt; Result<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span>, io::Error<span style="color:#f92672">&gt;</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> similarity: <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#f92672">&amp;</span>arr[<span style="color:#ae81ff">0</span>] {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#66d9ef">in</span> <span style="color:#f92672">&amp;</span>arr[<span style="color:#ae81ff">1</span>] {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> j {
-</span></span><span style="display:flex;"><span>                count<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        similarity <span style="color:#f92672">+=</span> i <span style="color:#f92672">*</span> count;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    Ok(similarity)
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">use</span> std::fs;
+<span style="color:#66d9ef">use</span> std::io;
+<span style="color:#66d9ef">use</span> std::env;
+
+<span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() -&gt; <span style="color:#a6e22e">std</span>::io::Result<span style="color:#f92672">&lt;</span>()<span style="color:#f92672">&gt;</span> {
+    <span style="color:#66d9ef">let</span> _args: Vec<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> env::args().collect();
+    <span style="color:#66d9ef">let</span> file_path <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>_args[<span style="color:#ae81ff">1</span>];
+
+    <span style="color:#66d9ef">let</span> result <span style="color:#f92672">=</span> read_file(<span style="color:#f92672">&amp;</span>file_path).unwrap();
+
+    <span style="color:#66d9ef">let</span> similarity <span style="color:#f92672">=</span> find_similarity(<span style="color:#f92672">&amp;</span>result).unwrap();
+    <span style="color:#66d9ef">let</span> distance <span style="color:#f92672">=</span> find_distance(result).unwrap();
+
+    println!(<span style="color:#e6db74">&#34;The similarity is: {similarity}&#34;</span>);
+    println!(<span style="color:#e6db74">&#34;The distance is: {distance}&#34;</span>);
+    Ok(())
+}
+
+<span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">find_distance</span>(<span style="color:#66d9ef">mut</span> arr: [Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>; <span style="color:#ae81ff">2</span>]) -&gt; Result<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span>, io::Error<span style="color:#f92672">&gt;</span> {
+    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> distance: <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">while</span> <span style="color:#f92672">!</span>arr[<span style="color:#ae81ff">1</span>].is_empty() {
+        <span style="color:#66d9ef">let</span> min_left: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> arr[<span style="color:#ae81ff">0</span>].iter().min().unwrap();
+        <span style="color:#66d9ef">let</span> min_right: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> arr[<span style="color:#ae81ff">1</span>].iter().min().unwrap();
+
+        <span style="color:#66d9ef">let</span> diff: <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">match</span> min_left <span style="color:#f92672">&gt;</span> min_right {
+            <span style="color:#66d9ef">true</span> <span style="color:#f92672">=&gt;</span> min_left <span style="color:#f92672">-</span> min_right,
+            <span style="color:#66d9ef">false</span> <span style="color:#f92672">=&gt;</span> min_right <span style="color:#f92672">-</span> min_left,
+        };    
+        distance <span style="color:#f92672">+=</span> diff;
+
+        <span style="color:#66d9ef">let</span> index_left: <span style="color:#66d9ef">usize</span> <span style="color:#f92672">=</span> arr[<span style="color:#ae81ff">0</span>].iter().position(<span style="color:#f92672">|</span>num<span style="color:#f92672">|</span> num <span style="color:#f92672">==</span> min_left).unwrap();
+        <span style="color:#66d9ef">let</span> index_right: <span style="color:#66d9ef">usize</span> <span style="color:#f92672">=</span> arr[<span style="color:#ae81ff">1</span>].iter().position(<span style="color:#f92672">|</span>num<span style="color:#f92672">|</span> num <span style="color:#f92672">==</span> min_right).unwrap();
+
+        arr[<span style="color:#ae81ff">0</span>].remove(index_left);
+        arr[<span style="color:#ae81ff">1</span>].remove(index_right);
+    }
+
+    Ok(distance)
+}
+
+<span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">read_file</span>(filename: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">str</span>) -&gt; Result<span style="color:#f92672">&lt;</span>[Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>; <span style="color:#ae81ff">2</span>], io::Error<span style="color:#f92672">&gt;</span> {
+    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> result: [Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>; <span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> [Vec::new(), Vec::new()];
+    <span style="color:#66d9ef">for</span> line <span style="color:#66d9ef">in</span> fs::read_to_string(filename).unwrap().lines() {
+        result[<span style="color:#ae81ff">0</span>].push(line[<span style="color:#f92672">..</span><span style="color:#ae81ff">5</span>].parse::<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>().unwrap());
+        result[<span style="color:#ae81ff">1</span>].push(line[<span style="color:#ae81ff">8</span><span style="color:#f92672">..</span>].parse::<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>().unwrap());
+    }
+    Ok(result)
+}
+
+<span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">find_similarity</span>(arr: <span style="color:#66d9ef">&amp;</span>[Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span>; <span style="color:#ae81ff">2</span>]) -&gt; Result<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span>, io::Error<span style="color:#f92672">&gt;</span> {
+    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> similarity: <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#f92672">&amp;</span>arr[<span style="color:#ae81ff">0</span>] {
+        <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> j <span style="color:#66d9ef">in</span> <span style="color:#f92672">&amp;</span>arr[<span style="color:#ae81ff">1</span>] {
+            <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> j {
+                count<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>;
+            }
+        }
+        similarity <span style="color:#f92672">+=</span> i <span style="color:#f92672">*</span> count;
+    }
+    Ok(similarity)
+}
+</code></pre></div><ul>
 <li>
 <p>Não acho que essa seja a forma mais optimizada em Rust para a resolução desse problema, porém foi a forma na qual eu pensei e consegui elaborar a solução á ser resolvida.</p>
 </li>
@@ -294,19 +292,7 @@ So, for these example lists, the similarity score at the end of this process is 
     
       
     
-      
     
-    
-    
-      
-      
-          
-            
-            
-             
-            
-          
-      
     
 </p>
 <br /><br />
