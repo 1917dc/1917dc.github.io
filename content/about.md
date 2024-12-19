@@ -10,4 +10,4 @@ author = "Luiz G."
 - [Letterboxd](https://letterboxd.com/yyounevershould/)
 - [Spotify](https://open.spotify.com/user/xtremegames53)
 
-* [My favourite video of all time](https://www.youtube.com/watch?v=VHWDHUQKFyA&list=PLrcw7nMuHtDx49OgY9PvK9EGvqvDzCwTv&index=1&t=3s&pp=gAQBiAQB)
+* [My favourite video of all time](https://www.youtube.com/watch?v=VHWDHUQKFyA&t=7s&pp=ygUVYmV0dGVyIGNhbGwgc2F1bCBhYmJh)
