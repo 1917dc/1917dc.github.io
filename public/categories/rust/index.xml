@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© [Luiz G.](https://github.com/1917dc)</copyright>
-    <lastBuildDate>Sun, 08 Dec 2024 17:19:54 -0300</lastBuildDate><atom:link href="https://1917dc.github.io/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Dec 2024 19:50:36 -0300</lastBuildDate><atom:link href="https://1917dc.github.io/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent of Code (day 2)</title>
+      <link>https://1917dc.github.io/post/19122024-adventofcode2024/</link>
+      <pubDate>Thu, 19 Dec 2024 19:50:36 -0300</pubDate>
+      
+      <guid>https://1917dc.github.io/post/19122024-adventofcode2024/</guid>
+      <description>Prólogo:  Nesses últimos dias andei estudando algumas coisas fora do escopo da programação, portanto não fui atrás até ontem de voltar a praticar Rust usando o Advent of Code (2024). Esse segundo dia aparentava ser muito mais complexo do que o primeiro, porém me faltava um pouco de conhecimento com a sintaxe da linguagem para executar a resolução dos problemas de forma correta e incisiva; então esse problema serviu muito bem para me ensinar conceitos específicos de sorting evolvendo arrays usando sinatxes específicas da linguagem, como será visto no tópico seguinte.</description>
+    </item>
+    
     <item>
       <title>Advent of Code 2024 (dia 1)</title>
       <link>https://1917dc.github.io/post/08122024-adventofcode-2024/</link>
